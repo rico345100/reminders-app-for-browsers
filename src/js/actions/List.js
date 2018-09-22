@@ -5,7 +5,7 @@ export const CREATE_LIST = "CREATE_LIST";
 export const UPDATE_LIST = "UPDATE_LIST";
 export const DELETE_LIST = "DELETE_LIST";
 
-export function CreateList(newList:ListSchema):ReduxAction {
+export function createList(newList:ListSchema):ReduxAction {
 	return {
 		type: CREATE_LIST,
 		payload: {
@@ -14,7 +14,7 @@ export function CreateList(newList:ListSchema):ReduxAction {
 	};
 }
 
-export function UpdateList(id:string, newList:ListSchema):ReduxAction {
+export function updateList(id:string, newList:ListSchema):ReduxAction {
 	return {
 		type: UPDATE_LIST,
 		payload: {
@@ -24,7 +24,7 @@ export function UpdateList(id:string, newList:ListSchema):ReduxAction {
 	};
 }
 
-export function DeleteList(id:string):ReduxAction {
+export function deleteList(id:string):ReduxAction {
 	return {
 		type: DELETE_LIST,
 		payload: {

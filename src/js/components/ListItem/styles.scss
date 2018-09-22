@@ -1,0 +1,11 @@
+@import "theme.scss";
+
+.listItem {
+	color: $theme-default-fontColor;
+	padding: 10px 5px 10px 20px;
+}
+
+.listItemActive {
+	background-color: $theme-default-selectedBgColor;
+	color: $theme-default-selectedFontColor;
+}

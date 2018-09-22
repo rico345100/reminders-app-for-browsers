@@ -1,0 +1,29 @@
+@import "theme.scss";
+
+.baseButton {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: 1px solid $theme-default-button-bgColor;
+	background-color: $theme-default-button-borderColor;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.dangerButton {
+	@extend .baseButton;
+	border-color: $theme-danger-button-borderColor;
+	background-color: $theme-danger-button-bgColor;
+}
+
+.warningButton {
+	@extend .baseButton;
+	border-color: $theme-warning-button-borderColor;
+	background-color: $theme-warning-button-bgColor;
+}
+
+.successButton {
+	@extend .baseButton;
+	border-color: $theme-success-button-borderColor;
+	background-color: $theme-success-button-bgColor;
+}

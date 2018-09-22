@@ -15,7 +15,7 @@ class TaskPanel extends Component<{}, {}> {
 					<div className={styles.taskItem}>
 						<div className={styles.taskItemCheckboxContainer}>
 							<input className={styles.taskItemCheckbox} type="checkbox" />
-							<span class={[styles.taskItemCheckMark, styles.taskItemCheckBoxChecked].join(' ')}></span>
+							<span className={[styles.taskItemCheckMark, styles.taskItemCheckBoxChecked].join(' ')}></span>
 						</div>
 
 						<div className={styles.taskItemLabel}>Korea</div>
@@ -24,7 +24,7 @@ class TaskPanel extends Component<{}, {}> {
 					<div className={styles.taskItem}>
 						<div className={styles.taskItemCheckboxContainer}>
 							<input className={styles.taskItemCheckbox} type="checkbox" />
-							<span class={styles.taskItemCheckMark}></span>
+							<span className={styles.taskItemCheckMark}></span>
 						</div>
 
 						<div className={styles.taskItemLabel}>Korea</div>

@@ -5,7 +5,7 @@ export const CREATE_TASK = "CREATE_TASK";
 export const UPDATE_TASK = "UPDATE_TASK";
 export const DELETE_TASK = "DELETE_TASK";
 
-export function CreateTask(newTask:TaskSchema):ReduxAction {
+export function createTask(newTask:TaskSchema):ReduxAction {
 	return {
 		type: CREATE_TASK,
 		payload: {
@@ -14,7 +14,7 @@ export function CreateTask(newTask:TaskSchema):ReduxAction {
 	};
 }
 
-export function UpdateTask(id:string, newTask:TaskSchema): ReduxAction {
+export function updateTask(id:string, newTask:TaskSchema): ReduxAction {
 	return {
 		type: UPDATE_TASK,
 		payload: {
@@ -24,7 +24,7 @@ export function UpdateTask(id:string, newTask:TaskSchema): ReduxAction {
 	};
 }
 
-export function DeleteTask(id:string):ReduxAction {
+export function deleteTask(id:string):ReduxAction {
 	return {
 		type: DELETE_TASK,
 		payload: {

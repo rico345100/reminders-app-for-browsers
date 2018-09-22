@@ -25,40 +25,12 @@
 	}
 }
 
-.baseButton {
-	display: inline-block;
-	width: 20px;
-	height: 20px;
-	border: 1px solid $theme-default-button-bgColor;
-	background-color: $theme-default-button-borderColor;
-	border-radius: 50%;
-	cursor: pointer;
-}
-
-.redButton {
-	@extend .baseButton;
-	border-color: $theme-danger-button-borderColor;
-	background-color: $theme-danger-button-bgColor;
-}
-
-.yellowButton {
-	@extend .baseButton;
-	border-color: $theme-warning-button-borderColor;
-	background-color: $theme-warning-button-bgColor;
-}
-
-.greenButton {
-	@extend .baseButton;
-	border-color: $theme-success-button-borderColor;
-	background-color: $theme-success-button-bgColor;
-}
-
 .list {
 	position: absolute;
 	top: 40px;
 	left: 0;
 	right: 0;
-	bottom: 0;
+	bottom: 30px;
 	overflow: auto;
 }
 
@@ -71,12 +43,10 @@
 
 }
 
-.listItem {
-	color: $theme-default-fontColor;
-	padding: 10px 5px 10px 20px;
-}
-
-.listItemActive {
-	background-color: $theme-default-selectedBgColor;
-	color: $theme-default-selectedFontColor;
+.listBottom {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 30px;
 }
