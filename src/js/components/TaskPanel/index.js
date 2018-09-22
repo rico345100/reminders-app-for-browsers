@@ -1,34 +1,18 @@
 /* @flow */
 import React, { Component } from 'react';
+import TaskHeader from 'components/TaskHeader';
+import TaskItem from 'components/TaskItem';
 import styles from './styles.scss';
 
 class TaskPanel extends Component<{}, {}> {
 	render() {
 		return (
 			<div className={styles.taskPanel}>
-				<div className={styles.taskPanelTop}>
-					<div className={styles.taskHeader}>A List</div>
-					<button className={styles.taskAddButton}>{'+'}</button>
-				</div>
+				<TaskHeader name={"임시"} />
 
 				<div className={styles.taskContainer}>
-					<div className={styles.taskItem}>
-						<div className={styles.taskItemCheckboxContainer}>
-							<input className={styles.taskItemCheckbox} type="checkbox" />
-							<span className={[styles.taskItemCheckMark, styles.taskItemCheckBoxChecked].join(' ')}></span>
-						</div>
-
-						<div className={styles.taskItemLabel}>Korea</div>
-					</div>
-
-					<div className={styles.taskItem}>
-						<div className={styles.taskItemCheckboxContainer}>
-							<input className={styles.taskItemCheckbox} type="checkbox" />
-							<span className={styles.taskItemCheckMark}></span>
-						</div>
-
-						<div className={styles.taskItemLabel}>Korea</div>
-					</div>
+					<TaskItem id="0" name="Helloworld" />
+					<TaskItem id="1" name="Helloworld" />
 				</div>
 			</div>
 		);

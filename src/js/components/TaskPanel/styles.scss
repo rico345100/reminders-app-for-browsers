@@ -11,35 +11,6 @@
 	background-color: #fff;
 }
 
-.taskPanelTop {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 100px;
-}
-
-.taskHeader {
-	color: #f19938;
-	font-size: 2em;
-	margin: 0 10px;
-	padding: 40px 0 5px 10px;
-	border-bottom: 1px solid $theme-default-borderColor;
-}
-
-.taskAddButton {
-	position: absolute;
-	top: 30px;
-	right: 20px;
-	border: 1px solid $theme-default-borderColor;
-	display: block;
-	color: $theme-default-fontColor;
-	width: 40px;
-	height: 30px;
-	border-radius: 5px;
-	font-size: 1.1em;
-}
-
 .taskContainer {
 	position: absolute;
 	top: 100px;
@@ -48,48 +19,4 @@
 	bottom: 0;
 	overflow: auto;
 	margin: 0px 15px;
-}
-
-.taskItem {
-	position: relative;
-	color: $theme-default-fontColor;
-	border-bottom: 1px solid $theme-default-borderColor;
-	padding: 20px 0 20px 20px;
-
-	> * {
-		display: inline-block;
-		margin-right: 20px;
-	}
-}
-
-.taskItemCheckboxContainer {
-	font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-	user-select: none;
-	
-	input {
-		position: absolute;
-    	opacity: 0;
-	}
-}
-
-.taskItemCheckMark {
-	position: absolute;
-    top: 20px;
-    left: 0;
-    height: 20px;
-    width: 20px;
-	background-color: #fff;
-	border: 1px solid #b6b6b6;
-    border-radius: 50%;
-}
-
-.taskItemCheckBoxChecked {
-	background-color: red;
-}
-
-.taskItemLabel {
-	color: $theme-default-fontColor;
 }

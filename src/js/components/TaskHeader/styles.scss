@@ -1,0 +1,30 @@
+@import "theme.scss";
+
+.taskPanelTop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 100px;
+}
+
+.taskAddButton {
+	position: absolute;
+	top: 30px;
+	right: 20px;
+	border: 1px solid $theme-default-borderColor;
+	display: block;
+	color: $theme-default-fontColor;
+	width: 40px;
+	height: 30px;
+	border-radius: 5px;
+	font-size: 1.1em;
+}
+
+.taskHeader {
+	color: #f19938;
+	font-size: 2em;
+	margin: 0 10px;
+	padding: 40px 0 5px 10px;
+	border-bottom: 1px solid $theme-default-borderColor;
+}

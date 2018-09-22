@@ -1,11 +1,10 @@
 /* @flow */
 import React, { Component } from 'react';
 import ListPanel from 'components/ListPanel';
-import { connect } from 'react-redux';
 import { createList } from 'actions/List';
 import { generateID } from 'utils';
 import type { ListSchema } from 'types';
-import store from 'store';
+import { connect } from 'react-redux';
 import { register } from 'hook';
 
 interface IListPanelContainerProps {
@@ -14,7 +13,7 @@ interface IListPanelContainerProps {
 }
 
 const mapStateToProps = (state) => ({
-	lists: state.list.value
+	lists: state.lists.value
 });
 
 @connect(mapStateToProps)

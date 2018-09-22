@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import store from 'store';
 import ListPanelContainer from 'containers/ListPanelContainer';
-import TaskPanel from 'components/TaskPanel';
+import TaskPanelContainer from 'containers/TaskPanelContainer';
 import styles from './styles.scss';
 
 class RemindersApp extends Component<{}, {}> {
@@ -13,7 +13,7 @@ class RemindersApp extends Component<{}, {}> {
         return (
 			<div className={styles.app}>
 				<ListPanelContainer />
-				<TaskPanel />
+				<TaskPanelContainer />
 
 				{/* Button for check store manually */}
 				<button className={styles.inspectButton} onClick={this.inspectStore}>Inspect Store</button>

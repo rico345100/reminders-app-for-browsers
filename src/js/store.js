@@ -5,7 +5,7 @@ import TaskReducer from 'reducers/Task';
 
 export default createStore(
     combineReducers({
-        list: ListReducer,
+        lists: ListReducer,
         tasks: TaskReducer
     })
 );
