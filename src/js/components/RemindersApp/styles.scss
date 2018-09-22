@@ -1,0 +1,13 @@
+@import "theme.scss";
+@import "defs.scss";
+
+.app {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: $appWidth;
+	height: $appHeight;
+	margin-top: -($appHeight / 2);
+	margin-left: -($appWidth / 2);
+	border: 1px solid $theme-default-windowBorderColor;
+}

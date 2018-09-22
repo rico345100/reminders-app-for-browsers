@@ -1,0 +1,9 @@
+// Application Size
+$appWidth: 800px;
+$appHeight: 600px;
+
+// List Panel
+$listPanelWidth: 250px;
+
+// Task Panel
+$taskPanelWidth: $appWidth - $listPanelWidth;

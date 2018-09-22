@@ -1,0 +1,75 @@
+@import "theme.scss";
+@import "defs.scss";
+
+.listPanel {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: $listPanelWidth - 1;	// For render right border
+	border-right: 3px solid $theme-default-borderColor;
+	background-color: $theme-default-bgColor;
+	overflow: auto;
+}
+
+.appButtons {
+	width: 100%;
+	height: 40px;
+	padding-top: 10px;
+	padding-left: 10px;
+
+	> div {
+		margin-right: 10px;
+	}
+}
+
+.baseButton {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: 1px solid $theme-default-button-bgColor;
+	background-color: $theme-default-button-borderColor;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.redButton {
+	@extend .baseButton;
+	border-color: $theme-danger-button-borderColor;
+	background-color: $theme-danger-button-bgColor;
+}
+
+.yellowButton {
+	@extend .baseButton;
+	border-color: $theme-warning-button-borderColor;
+	background-color: $theme-warning-button-bgColor;
+}
+
+.greenButton {
+	@extend .baseButton;
+	border-color: $theme-success-button-borderColor;
+	background-color: $theme-success-button-bgColor;
+}
+
+.list {
+
+}
+
+.listHeader {
+	color: $theme-default-headerFontColor;
+	padding: 5px 10px;
+}
+
+.listContainer {
+
+}
+
+.listItem {
+	color: $theme-default-fontColor;
+	padding: 10px 5px 10px 20px;
+}
+
+.listItemActive {
+	background-color: $theme-default-selectedBgColor;
+	color: $theme-default-selectedFontColor;
+}

@@ -1,0 +1,20 @@
+$theme-default-windowBorderColor: #eee;
+$theme-default-headerFontColor: #777;
+$theme-default-fontColor: #444;
+$theme-default-bgColor: #f6f6f6;
+$theme-default-borderColor: #dfdfdf;
+
+$theme-default-selectedBgColor: #cecece;
+$theme-default-selectedFontColor: #fff;
+
+$theme-default-button-bgColor: #444;
+$theme-default-button-borderColor: lighten($theme-default-button-bgColor, 30%);
+
+$theme-danger-button-bgColor: #ed6a5e;
+$theme-danger-button-borderColor: #d55448;
+
+$theme-warning-button-bgColor: #f5be4f;
+$theme-warning-button-borderColor: #d8a03e;
+
+$theme-success-button-bgColor: #62c655;
+$theme-success-button-borderColor: #57a943;

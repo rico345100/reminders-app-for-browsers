@@ -91,9 +91,9 @@ module.exports = {
                     {
                         loader: 'sass-loader',
                         options: {
-                            // includePaths: [
-
-                            // ],
+                            includePaths: [
+                                './src/css'
+                            ],
                             sourceMap: true
                         }
                     }
