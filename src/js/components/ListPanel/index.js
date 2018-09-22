@@ -21,7 +21,6 @@ class ListPanel extends Component<IListPanelProps, {}> {
 		lists: []
 	}
 	render() {
-		console.log('<ListPanel />::render');
 		const { lists, createList } = this.props;
 		
 		return (

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ListItem from 'components/ListItem';
 import { updateList, deleteList } from 'actions/List';
+import { trigger } from 'hook';
 import type { ListSchema } from 'types';
 
 interface IListItemContainerProps {
@@ -38,6 +39,9 @@ class ListItemContainer extends Component<IListItemContainerProps, {}> {
 
 		if(typeof(dispatch) === 'function') {
 			dispatch(deleteList(id));
+
+			// Trigger the update for forcely update Components that doesn't update from store changes
+			trigger();
 		}
 	}
 	render() {

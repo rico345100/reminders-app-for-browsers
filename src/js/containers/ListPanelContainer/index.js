@@ -6,6 +6,7 @@ import { createList } from 'actions/List';
 import { generateID } from 'utils';
 import type { ListSchema } from 'types';
 import store from 'store';
+import { register } from 'hook';
 
 interface IListPanelContainerProps {
 	dispatch?: Function;
@@ -18,6 +19,12 @@ const mapStateToProps = (state) => ({
 
 @connect(mapStateToProps)
 class ListPanelContainer extends Component<IListPanelContainerProps, {}> {
+	componentWillMount() {
+		register(this.externalForceUpdate);
+	}
+	externalForceUpdate = () => {
+		this.forceUpdate();
+	}
 	createList = () => {
 		const { dispatch } = this.props;
 		const newID:number = generateID();
@@ -38,7 +45,6 @@ class ListPanelContainer extends Component<IListPanelContainerProps, {}> {
 	}
 	render() {
 		const { lists } = this.props;
-		console.log('<ListPanelContainer />::render');
 
 		return (
 			<ListPanel createList={this.createList} lists={lists} />
