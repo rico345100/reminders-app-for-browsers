@@ -7,6 +7,8 @@ interface IListItemProps {
 	text: string;
 	updateList: Function;
 	deleteList: Function;
+	setActiveList: Function;
+	activated: boolean;
 }
 
 interface IListItemState {
@@ -18,7 +20,9 @@ class ListItem extends Component<IListItemProps, IListItemState> {
 	static propTypes = {
 		text: PropTypes.string.isRequired,
 		updateList: PropTypes.func,
-		deleteList: PropTypes.func
+		deleteList: PropTypes.func,
+		setActiveList: PropTypes.func,
+		activated: PropTypes.bool.isRequired
 	}
 	state = {
 		editMode: false,
@@ -59,11 +63,16 @@ class ListItem extends Component<IListItemProps, IListItemState> {
 		);
 	}
 	renderAsText = () => {
-		const { deleteList } = this.props;
+		const { deleteList, setActiveList, activated } = this.props;
 		const { value } = this.state;
+		let renderStyles = [styles.listItem];
+
+		if(activated) {
+			renderStyles.push(styles.listItemActive);
+		}
 
 		return (
-			<div className={styles.listItem} onDoubleClick={this.switchToEditMode}>
+			<div className={renderStyles.join(' ')} onDoubleClick={this.switchToEditMode} onClick={setActiveList}>
 				<div>{value}</div>
 				<button className={styles.listItemDeleteButton} onClick={deleteList}>{'✕'}</button>
 			</div>

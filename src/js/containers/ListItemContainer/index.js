@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ListItem from 'components/ListItem';
 import { updateList, deleteList } from 'actions/List';
+import { setActiveList } from 'actions/AppState';
 import { trigger } from 'hook';
 import type { ListSchema } from 'types';
 
@@ -12,9 +13,14 @@ interface IListItemContainerProps {
 	text: string;
 	createdAt: Date;
 	dispatch?: Function;
+	activeList?: string;
 }
 
-@connect()
+const mapStateToProps = (state) => ({
+	activeList: state.appState.activeList
+});
+
+@connect(mapStateToProps)
 class ListItemContainer extends Component<IListItemContainerProps, {}> {
 	static propTypes = {
 		id: PropTypes.string.isRequired,
@@ -44,11 +50,19 @@ class ListItemContainer extends Component<IListItemContainerProps, {}> {
 			trigger();
 		}
 	}
+	setActiveList = () => {
+		const { dispatch, id } = this.props;
+
+		if(typeof(dispatch) === 'function') {
+			dispatch(setActiveList(id));
+		}
+	}
 	render() {
-		const { id, text } = this.props;
+		const { id, text, activeList } = this.props;
+		const isActivated = id === activeList ? true : false;
 
 		return (
-			<ListItem id={id} text={text} updateList={this.updateList} deleteList={this.deleteList} />
+			<ListItem id={id} text={text} updateList={this.updateList} deleteList={this.deleteList} setActiveList={this.setActiveList} activated={isActivated} />
 		);
 	}
 }
