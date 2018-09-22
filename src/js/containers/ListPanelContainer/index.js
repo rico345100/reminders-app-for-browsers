@@ -8,8 +8,8 @@ import type { ListSchema } from 'types';
 import store from 'store';
 
 interface IListPanelContainerProps {
-	dispatch: Function;
-	lists: Array<ListSchema>;
+	dispatch?: Function;
+	lists?: Array<ListSchema>;
 }
 
 const mapStateToProps = (state) => ({
@@ -28,7 +28,9 @@ class ListPanelContainer extends Component<IListPanelContainerProps, {}> {
 			created_at: new Date()
 		};
 
-		dispatch(createList(newList));
+		if(typeof(dispatch) === 'function') {
+			dispatch(createList(newList));
+		}
 
 		// I don't know why, but Render doesn't happend even dispatched, I checked every related source codes, but every flow works fine except this.
 		// Just for now, I just forcely update, however this must be reported as issue.
@@ -36,6 +38,7 @@ class ListPanelContainer extends Component<IListPanelContainerProps, {}> {
 	}
 	render() {
 		const { lists } = this.props;
+		console.log('<ListPanelContainer />::render');
 
 		return (
 			<ListPanel createList={this.createList} lists={lists} />

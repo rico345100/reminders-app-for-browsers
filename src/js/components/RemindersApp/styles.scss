@@ -11,3 +11,10 @@
 	margin-left: -($appWidth / 2);
 	border: 1px solid $theme-default-windowBorderColor;
 }
+
+.inspectButton {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	padding: 10px;
+}

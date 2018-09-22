@@ -1,5 +1,5 @@
 /* @flow */
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './styles.scss';
 
@@ -7,7 +7,7 @@ interface IListCreateButtonProps {
 	onClick: Function;
 }
 
-class ListCreateButton extends PureComponent<IListCreateButtonProps, {}> {
+class ListCreateButton extends Component<IListCreateButtonProps, {}> {
 	static propTypes = {
 		onClick: PropTypes.func
 	}

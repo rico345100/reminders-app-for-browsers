@@ -1,11 +1,28 @@
 @import "theme.scss";
 
 .listItem {
+	position: relative;
 	color: $theme-default-fontColor;
 	padding: 10px 5px 10px 20px;
+
+	&:hover {
+		background-color: $theme-default-selectedBgColor;
+	}
 }
 
 .listItemActive {
 	background-color: $theme-default-selectedBgColor;
 	color: $theme-default-selectedFontColor;
+}
+
+.listItemDeleteButton {
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	height: 30px;
+	width: 30px;
+	margin-top: -15px;
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
 }

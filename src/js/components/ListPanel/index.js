@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './styles.scss';
 import TopButton from 'components/TopButton';
 import ListCreateButton from 'components/ListCreateButton';
-import ListItem from 'components/ListItem';
+import ListItemContainer from 'containers/ListItemContainer';
 import type { ListSchema } from 'types';
 
 interface IListPanelProps {
@@ -21,8 +21,8 @@ class ListPanel extends Component<IListPanelProps, {}> {
 		lists: []
 	}
 	render() {
+		console.log('<ListPanel />::render');
 		const { lists, createList } = this.props;
-		console.log(lists);
 		
 		return (
 			<div className={styles.listPanel}>
@@ -36,8 +36,8 @@ class ListPanel extends Component<IListPanelProps, {}> {
 					<div className={styles.listHeader}>On My Mac</div>
 					<div className={styles.listContainer}>
 					{
-						lists.map(listItem => (
-							<ListItem key={listItem.id} text={listItem.name} />
+						lists.map((listItem:ListSchema) => (
+							<ListItemContainer key={listItem.id} id={listItem.id} text={listItem.name} createdAt={listItem.created_at} />
 						))
 					}
 					</div>
