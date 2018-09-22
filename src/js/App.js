@@ -8,7 +8,7 @@ class App extends Component<null, null> {
         return (
             <Provider store={store}>
 				<div>
-					<h1>Helloworld!</h1>
+                    <h1>Helloworld!</h1>
 				</div>
             </Provider>
         );
