@@ -13,7 +13,7 @@ interface IListItemContainerProps {
 	text: string;
 	createdAt: Date;
 	dispatch?: Function;
-	activeList?: string;
+	activeList?: ListSchema;
 }
 
 const mapStateToProps = (state) => ({
@@ -51,15 +51,25 @@ class ListItemContainer extends Component<IListItemContainerProps, {}> {
 		}
 	}
 	setActiveList = () => {
-		const { dispatch, id } = this.props;
+		const { dispatch, id, text, createdAt } = this.props;
 
 		if(typeof(dispatch) === 'function') {
-			dispatch(setActiveList(id));
+			dispatch(
+				setActiveList({
+					id,
+					name: text,
+					created_at: createdAt
+				})
+			);
 		}
 	}
 	render() {
 		const { id, text, activeList } = this.props;
-		const isActivated = id === activeList ? true : false;
+		let isActivated = false;
+
+		if(typeof activeList !== 'undefined') {
+			isActivated = id === activeList.id ? true : false;
+		}
 
 		return (
 			<ListItem id={id} text={text} updateList={this.updateList} deleteList={this.deleteList} setActiveList={this.setActiveList} activated={isActivated} />

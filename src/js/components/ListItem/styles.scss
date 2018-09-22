@@ -5,8 +5,16 @@
 	color: $theme-default-fontColor;
 	padding: 10px 5px 10px 20px;
 
+	> button {
+		display: none;
+	}
+
 	&:hover {
 		background-color: $theme-default-selectedBgColor;
+
+		> button {
+			display: block;
+		}
 	}
 }
 

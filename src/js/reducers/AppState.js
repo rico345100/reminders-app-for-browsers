@@ -1,9 +1,9 @@
 /* @flow */
-import type { ReduxAction } from 'types';
+import type { ListSchema, ReduxAction } from 'types';
 import { SET_ACTIVE_LIST, CLEAR_ACTIVE_LIST } from 'actions/AppState';
 
 interface IAppState {
-	activeList: any;
+	activeList: ListSchema|void;
 }
 
 const defaultState:IAppState = {

@@ -1,14 +1,24 @@
 /* @flow */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import TaskHeader from 'components/TaskHeader';
 import TaskItem from 'components/TaskItem';
 import styles from './styles.scss';
 
-class TaskPanel extends Component<{}, {}> {
+interface ITaskPanel {
+	headerText: string;
+}
+
+class TaskPanel extends Component<ITaskPanel, {}> {
+	static propTypes = {
+		headerText: PropTypes.string.isRequired
+	}
 	render() {
+		const { headerText } = this.props;
+		
 		return (
 			<div className={styles.taskPanel}>
-				<TaskHeader name={"임시"} />
+				<TaskHeader name={headerText} />
 
 				<div className={styles.taskContainer}>
 					<TaskItem id="0" name="Helloworld" />
