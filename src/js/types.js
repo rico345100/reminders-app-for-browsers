@@ -3,6 +3,7 @@ export type ListSchema = {
 	id: string;
 	name: string;
 	created_at: Date;
+	color: string;
 };
 
 export type TaskSchema = {

@@ -19,6 +19,11 @@
 	height: 30px;
 	border-radius: 5px;
 	font-size: 1.1em;
+	cursor: pointer;
+
+	&:hover {
+		background-color: $theme-default-selectedBgColor;
+	}
 }
 
 .taskHeader {

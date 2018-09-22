@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import ListPanel from 'components/ListPanel';
 import { createList } from 'actions/List';
-import { generateID } from 'utils';
+import { RandomGenerator } from 'utils';
 import type { ListSchema } from 'types';
 import { connect } from 'react-redux';
 import { register } from 'hook';
@@ -18,20 +18,27 @@ const mapStateToProps = (state) => ({
 
 @connect(mapStateToProps)
 class ListPanelContainer extends Component<IListPanelContainerProps, {}> {
+	// Type Defs
+	randomGenerator: RandomGenerator
+
+	// Variable Defs
+	randomGenerator = new RandomGenerator()
+
 	componentWillMount() {
-		register(this.externalForceUpdate);
+		register('Update::ListPanelContainer', this.externalForceUpdate);
 	}
 	externalForceUpdate = () => {
 		this.forceUpdate();
 	}
 	createList = () => {
 		const { dispatch } = this.props;
-		const newID:number = generateID();
+		const newID:number = this.randomGenerator.generateNumber();
 
 		const newList:ListSchema = {
 			id: newID.toString(),
 			name: `List ${newID}`,
-			created_at: new Date()
+			created_at: new Date(),
+			color: this.randomGenerator.generateHexColor()
 		};
 
 		if(typeof(dispatch) === 'function') {

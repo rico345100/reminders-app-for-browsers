@@ -36,7 +36,7 @@ class ListPanel extends Component<IListPanelProps, {}> {
 					<div className={styles.listContainer}>
 					{
 						lists.map((listItem:ListSchema) => (
-							<ListItemContainer key={listItem.id} id={listItem.id} text={listItem.name} createdAt={listItem.created_at} />
+							<ListItemContainer key={listItem.id} id={listItem.id} text={listItem.name} createdAt={listItem.created_at} color={listItem.color} />
 						))
 					}
 					</div>

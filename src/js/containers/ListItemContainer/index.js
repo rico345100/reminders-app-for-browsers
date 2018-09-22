@@ -12,6 +12,7 @@ interface IListItemContainerProps {
 	id: string;
 	text: string;
 	createdAt: Date;
+	color: string;
 	dispatch?: Function;
 	activeList?: ListSchema;
 }
@@ -25,16 +26,18 @@ class ListItemContainer extends Component<IListItemContainerProps, {}> {
 	static propTypes = {
 		id: PropTypes.string.isRequired,
 		text: PropTypes.string.isRequired,
-		createdAt: PropTypes.instanceOf(Date).isRequired
+		createdAt: PropTypes.instanceOf(Date).isRequired,
+		color: PropTypes.string.isRequired
 	}
 	updateList = (newName: string) => {
-		const { dispatch, id, createdAt } = this.props;
+		const { dispatch, id, createdAt, color } = this.props;
 
 		if(typeof(dispatch) === 'function') {
 			const newList:ListSchema = {
 				id,
 				name: newName,
-				created_at: createdAt
+				created_at: createdAt,
+				color
 			};
 
 			dispatch(updateList(id, newList));
@@ -47,18 +50,19 @@ class ListItemContainer extends Component<IListItemContainerProps, {}> {
 			dispatch(deleteList(id));
 
 			// Trigger the update for forcely update Components that doesn't update from store changes
-			trigger();
+			trigger('Update::ListPanelContainer');
 		}
 	}
 	setActiveList = () => {
-		const { dispatch, id, text, createdAt } = this.props;
+		const { dispatch, id, text, createdAt, color } = this.props;
 
 		if(typeof(dispatch) === 'function') {
 			dispatch(
 				setActiveList({
 					id,
 					name: text,
-					created_at: createdAt
+					created_at: createdAt,
+					color
 				})
 			);
 		}

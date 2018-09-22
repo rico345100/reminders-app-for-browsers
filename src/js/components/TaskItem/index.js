@@ -17,11 +17,13 @@ class TaskItem extends Component<ITaskItemProps, {}> {
 	render() {
 		const { name } = this.props;
 
+		// selected style name: styles.taskItemCheckBoxChecked
+
 		return (
 			<div className={styles.taskItem}>
 				<div className={styles.taskItemCheckboxContainer}>
 					<input className={styles.taskItemCheckbox} type="checkbox" />
-					<span className={[styles.taskItemCheckMark, styles.taskItemCheckBoxChecked].join(' ')}></span>
+					<span className={[styles.taskItemCheckMark].join(' ')}></span>
 				</div>
 
 				<div className={styles.taskItemLabel}>{name}</div>
