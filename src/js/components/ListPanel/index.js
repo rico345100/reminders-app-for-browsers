@@ -8,18 +8,21 @@ import ListItem from 'components/ListItem';
 import type { ListSchema } from 'types';
 
 interface IListPanelProps {
-	lists: Array<ListSchema>
+	lists: Array<ListSchema>;
+	createList: Function;
 }
 
 class ListPanel extends Component<IListPanelProps, {}> {
 	static propTypes = {
-		lists: PropTypes.array.isRequired
+		lists: PropTypes.array.isRequired,
+		createList: PropTypes.func
 	}
 	static defaultProps = {
 		lists: []
 	}
 	render() {
-		const { lists } = this.props;
+		const { lists, createList } = this.props;
+		console.log(lists);
 		
 		return (
 			<div className={styles.listPanel}>
@@ -41,7 +44,7 @@ class ListPanel extends Component<IListPanelProps, {}> {
 				</div>
 
 				<div className={styles.listBottom}>
-					<ListCreateButton />
+					<ListCreateButton onClick={createList} />
 				</div>
 			</div>
 		);

@@ -1,11 +1,21 @@
 /* @flow */
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import styles from './styles.scss';
 
-class ListCreateButton extends PureComponent<{}, {}> {
+interface IListCreateButtonProps {
+	onClick: Function;
+}
+
+class ListCreateButton extends PureComponent<IListCreateButtonProps, {}> {
+	static propTypes = {
+		onClick: PropTypes.func
+	}
 	render() {
+		const { onClick } = this.props;
+		
 		return (
-			<button className={styles.listCreateButton}>{"+"} 목록 추가</button>
+			<button className={styles.listCreateButton} onClick={onClick}>{"+"} 목록 추가</button>
 		);
 	}
 }
