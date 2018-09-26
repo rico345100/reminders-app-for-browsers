@@ -94,7 +94,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(['dist']),
+      new CleanWebpackPlugin(['dist/*.*']),
         new HtmlWebpackPlugin({
             template: './src/index.html'
         }),
