@@ -20,7 +20,7 @@ module.exports = {
         ]
     },
     output: {
-        path: `${__dirname}/dist`,
+        path: path.resolve(__dirname, 'dist'),
         publicPath: '/',
         filename: '[name].[hash].js'
     },
@@ -94,7 +94,7 @@ module.exports = {
         ]
     },
     plugins: [
-      new CleanWebpackPlugin(['dist/*.*']),
+      new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             template: './src/index.html'
         }),
