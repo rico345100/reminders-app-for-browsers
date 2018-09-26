@@ -71,3 +71,5 @@ prod-result.json
 
 # VS Code Project files
 **/.vscode
+
+dist/
