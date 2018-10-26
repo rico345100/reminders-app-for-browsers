@@ -1,6 +1,8 @@
 # Reminders App for Web Browsers
 Simple MacOS Reminders Like App for Web Browsers.
 
+Note that this isn't completed project yet!
+
 ## Run
 ### Developement Build
 ```bash
